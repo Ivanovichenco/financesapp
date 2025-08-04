@@ -1,0 +1,35 @@
+table users{
+  id integer [pk, increment]
+  name varchar
+  email varchar [unique]
+  password varchar
+}
+
+table categories {
+  id integer [pk, increment]
+  name varchar
+  type enum('income', 'expense')
+  user_id integer [ref: > users.id]
+}
+
+Table transactions {
+  id integer [pk, increment] 
+  type enum('income', 'expense')
+  amount decimal(10, 2)
+  description varchar
+  category_id integer [ref: > categories.id]
+  user_id integer [ref: > users.id]
+  photo varchar
+  date date
+}
+
+table budgets {
+  id integer [pk, increment]
+  user_id integer [ref: > users.id]
+  category_id integer [ref: > categories.id]
+  name varchar
+  amount decimal(10, 2)
+  user_id integer [ref: > users.id]
+  mounth varchar
+  year integer
+}

@@ -1,1 +1,1 @@
-Programa para construir una app de gastos personales con Laravel 12 y Filament3
+Programa para construir una app de gastos personales con Laravel 12 y Filament3Usamos la extension dbml de Justo Bocovo para crear los diagramas entidad-relacion. 
