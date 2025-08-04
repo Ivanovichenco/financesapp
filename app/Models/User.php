@@ -45,4 +45,19 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    /**
+     * Get the transactions associated with the user.
+     */
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
+    }
+
+    /**
+     * Get the budgets associated with the user.
+     */
+    public function budgets()
+    {
+        return $this->hasMany(Budget::class);
+    }
 }

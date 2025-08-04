@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('year');
             $table->enum('type', ['income', 'expense']);
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
-            $table->string('description')->nullable();
             $table->timestamps();
         });
     }
